@@ -108,3 +108,37 @@ BB
 CCC
 DDDD
 EEEEE
+
+
+
+// n=4
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    for(int i=1; i<=n; i++){
+	if(i==1 || i==n){
+		int j=n;
+		while(j--){
+		   cout<<"*";
+		}
+		cout<<endl;
+		}
+		else {
+		   cout<<"*";
+		   int k = n-2;
+		   while(k--){
+			cout<<" ";
+			}
+		   cout<<"*"<<endl;
+		}	
+	}
+	
+}
+
+Output:
+****
+*  *
+*  *
+****
