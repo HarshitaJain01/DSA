@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+	cin>>n;
+    int count=0;
+    int y=n;
+    int h=n;
+    int g=0;
+    while(y!=0){
+        y=y/10;
+        count++;
+    }
+    int t=count;
+    while(h!=0){
+        int x=h%10;
+        g=g+pow(x,t);
+        h=h/10;
+    }
+    if(g==n){
+        cout<<"Yes";
+    }
+    else{
+        cout<<"No";
+    }
+}
