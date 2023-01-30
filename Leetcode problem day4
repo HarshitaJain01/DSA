@@ -520,3 +520,53 @@ public:
         insert(key, 1, value);
     }
 };
+
+int tribonaccihelper(int n, vector<int> &memo){
+    // MEMOIZATION APPROACH        
+    if(n == 0){
+        return 0;
+    }
+    
+    else if(n == 1 || n == 2){
+        return 1;
+    }
+
+    if(memo[n] != -1){
+        return memo[n];
+    }
+
+    int n1 = tribonaccihelper(n-1, memo);
+    int n2 = tribonaccihelper(n-2, memo);
+    int n3 = tribonaccihelper(n-3, memo);
+
+    int total = n1 + n2 + n3;
+    memo[n] = total;
+
+    return total;
+}
+
+int tribonacci(int n) {
+    // // USUAL RECURSIVE APPROACH        
+    // if(n == 0){
+    //     return 0;
+    // }
+    
+    // else if(n == 1 || n == 2){
+    //     return 1;
+    // }
+
+    // int n1 = tribonacci(n-1);
+    // int n2 = tribonacci(n-2);
+    // int n3 = tribonacci(n-3);
+
+    // int total = n1 + n2 + n3;
+    // return total;
+
+
+
+    //MEMOIZATION APPROACH
+    vector<int> dp(n+1, -1);
+    int val = tribonaccihelper(n, dp);
+
+    return val;
+}
